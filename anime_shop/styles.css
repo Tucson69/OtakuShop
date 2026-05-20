@@ -1,0 +1,32 @@
+.container {
+    text-align: center;
+    border: 2px solid #000;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container2 {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.filters {
+    width: 260px;
+    top: 10px; /* opcional: se queda fijo al hacer scroll */
+    
+}
+
+.products {
+    flex: 1;
+}
+
+/* opcional para responsive */
+@media (max-width: 768px) {
+    .container2 {
+        flex-direction: column;
+    }
+
+    .filters {
+        width: 100%;
+    }
+}
