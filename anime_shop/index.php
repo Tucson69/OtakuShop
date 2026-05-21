@@ -1,45 +1,53 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>OtakuShop</title>
 </head>
 <body>
+
+<div class="global">
     <div class="container">
     <h1>OtakuShop</h1>
-    <p>Ropa de tus animes favoritos en esta tienda!</p>
+    <p>Remeras, buzos y más!</p>
+    <nav>
+        <a href="shoppingcart.php">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+    </nav>
     </div>
 <hr>
 
 
 <div class="container2">
 
-    <!-- FILTROS (LADO IZQUIERDO) -->
+   
     <aside class="filters">
-        <h3>Filtros</h3>
-
-        <label>Precio</label>
-        <input type="number" placeholder="Min">
-
-        <input type="number" placeholder="Max">
-
-        <button>Aplicar</button>
+        <?php
+        require_once("Vista/filters.php")
+        ?>
     </aside>
 
-    <!-- PRODUCTOS (LADO DERECHO) -->
+   
     <main class="products">
 
        <?php
         require_once("Vista/showproducts.php");
+        //require_once("Vista/addproducts.php");
         ?>
 
     </main>
 
 </div>
 
-
+</div>
 
 
 

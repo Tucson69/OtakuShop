@@ -1,26 +1,135 @@
-.container {
-    text-align: center;
-    border: 2px solid #000;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #ececec;
+    color: #222;
 }
 
+/* Botones globales */
+button {
+    cursor: pointer;
+    border: none;
+}
+
+/* Contenedor general */
+.global {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Header */
+.container {
+    text-align: center;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.container h1 {
+    margin: 0;
+    font-size: 32px;
+    color: #222;
+}
+
+.container p {
+    margin-top: 5px;
+    color: #666;
+}
+
+/* Layout principal */
 .container2 {
     display: flex;
     gap: 20px;
     align-items: flex-start;
+    margin-top: 20px;
 }
 
+/* FILTROS */
 .filters {
     width: 260px;
-    top: 10px; /* opcional: se queda fijo al hacer scroll */
-    
+    background: #fafafa;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    position: sticky;
+    top: 10px;
+    height: fit-content;
 }
 
+/* PRODUCTOS GRID */
 .products {
-    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
 }
 
-/* opcional para responsive */
+/* CARD PRODUCTO */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    border: 1px solid #e6e6e6;
+    padding: 15px;
+    border-radius: 16px;
+
+    background: white;
+
+    text-align: center;
+
+    transition: all 0.25s ease;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    border-color: #d6d6d6;
+}
+
+/* IMAGEN */
+.product-card img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* TEXTO */
+.product-card h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.product-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* BOTÓN AGREGAR */
+.product-card a {
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 10px;
+
+    background: #111;
+    color: white;
+
+    transition: 0.2s;
+}
+
+.product-card a:hover {
+    background: #333;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
     .container2 {
         flex-direction: column;
@@ -28,5 +137,6 @@
 
     .filters {
         width: 100%;
+        position: static;
     }
 }
